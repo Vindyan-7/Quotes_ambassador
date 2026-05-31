@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #0f1117;
+  color: #e8eaf0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100dvh;
+  overflow-x: hidden; /* ADD THIS */
+}
+::selection { background: rgba(245,166,35,0.2); color: #f5a623; }
+
+:focus-visible {
+  outline: 2px solid #f5a623;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #090b10; }
+::-webkit-scrollbar-thumb { background: #1e2535; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #f5a623; }
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f5a623 0%, #ffd47e 50%, #f5a623 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(22,27,39,0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
